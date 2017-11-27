@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<script src="OpenIOE_min.js"></script>
+	<script type="text/javascript">
+		var openioe = OpenIOE.createNew();　　
+		openioe.request({
+			url: 'http://api.openioe.net/IOT/',//这里填写API 服务地址 查看各个 API 服务地址
+			time: 5000,
+			data: {                 //这里填写需要提交的数据
+				"LINK": "p",        //访问http://lingread.celerstar.com/content-gh941SnHN5St8wZU-371-653.html 查看各个API文档
+				"ISTR": "inq",      
+				"CONT": "userinfo",
+				"TYPE": "jsonp"     //可不填写，网页推荐使用 jsonp 如果后端访问 还可以使用 json\jsonp\xml
+			},
+			success: function(res) {
+				console.log(res);   //打印返回数据
+			},
+			error: function(error) {
+				console.log(error); //打印错误信息
+			}
+		});
+	</script>
+
+</html>
